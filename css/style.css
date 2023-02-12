@@ -30,7 +30,7 @@
 .container1 main {
     font-family: Monstreal;
     width: 50vw;
-    margin-left: 2.3em;
+    margin-left: 2.5em;
     margin-top: 5.1em;
     box-sizing: border-box  ;
 }
@@ -134,6 +134,45 @@
     padding-top: 2.2em;
 }
 
+.container3 main img {
+    position: relative;
+    top: 1.875em;
+    margin-bottom: 2em;
+    width: 5em;
+}
+
+.container4 {
+    background-color: rgb(80, 216, 216);
+    height: 100vh;
+    font-size: 16px;
+}
+
+.container4 main {
+    font-family: Monstreal;
+    font-size: 16px;
+}
+
+.container4 main h1 {
+    text-align: center;
+    padding-top: 2.2em;
+}
+
+.container5 {
+    background-color: rgb(41, 38, 38);
+    height: 5vh;
+    font-size: 16px;
+}
+
+.container5 footer {
+    font-family: Monstreal;
+    font-size: 16px;
+}
+
+.container5 footer p {
+    text-align: center;
+    color: white;
+    font-size: 1em;
+}
 
 
 /* Responsive */
@@ -153,9 +192,49 @@
     }
 }
 @media (min-width:1025px) {
+    .container1 main {
+        margin-top: 8em;
+    }
+    .container1 main p {
+        font-size: 1.4em;
+    }
+    .container1 main h4 {
+        font-size: 3em;
+    }
+    .container1 main button {
+        width: 17em;
+        height: 4em;
+        position: relative;
+    }
+    .container1 main a {
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+    .container1 main img {
+        width: 30em;
+        height: 30em;
+        position: relative;
+        left: 50em;
+        bottom: 23em;
+    }
     .container2 {
         height: 106vh;
     }
+    .container2 main p {
+        width: 50ch;
+        font-size: 1.35em;
+    }
+    .container2 main .school {
+        font-size: 1.45em;
+    }
+    .container2 main img {
+        width: 30em;
+        height: 30em;
+        position: relative;
+        bottom: 23em;
+        left: 50.4em;
+    }
+    
 }
 @media (min-width:1281px) {
     .container2 {
