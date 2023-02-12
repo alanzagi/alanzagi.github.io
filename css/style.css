@@ -1,0 +1,164 @@
+@font-face {
+    font-family: Generic;
+    src: url(../fonts/generic/g50-cc-typic-demo-generic-19503/Generic-G50-CC-Typic-DEMO.otf);
+}
+
+@font-face {
+    font-family: Itim-Reguler;
+    src: url(../fonts/Itim/ItimReguler.ttf);
+}
+
+@font-face {
+    font-family: BodoAmat;
+    src: url(../fonts/BodoAmat.ttf)
+}
+
+@font-face {
+    font-family: Monstreal;
+    src: url(../fonts/montreal-cufonfonts/Montreal-Bold.ttf);
+}
+
+.container1 {
+    background-color: rgb(9, 247, 247);
+    height: 100vh;
+    font-size: 16px;
+}
+.container1 nav {
+    font-family: Itim-Reguler;
+}
+
+.container1 main {
+    font-family: Monstreal;
+    width: 50vw;
+    margin-left: 2.3em;
+    margin-top: 5.1em;
+    box-sizing: border-box  ;
+}
+
+.container1 main h4 {
+    width: 45vw;
+}
+
+.container1 main p {
+    width: 45ch;
+    font-size: .51em;
+}
+
+.container1 main button {
+    width: 5.8em;
+    height: 2em;
+    border: .130em solid white;
+    border-radius: 1.25em;
+    background-color: black;
+    transition: 500ms;
+}
+
+.container1 main button:hover {
+    background-color: rgb(9, 247, 247);
+    border:  .130em solid black;
+}
+
+.container1 main a {
+    font-size: .75em;
+    line-height: 2em;
+    text-decoration: none;
+    color: white;
+    transition: 500ms;
+}
+
+.container1 main a:hover {
+    color: black;
+}
+
+.container1 main img {
+    width: 13em;
+    height: 10em;
+    position: relative;
+    left: 3em;
+}
+
+.wave {
+    background-color: rgb(41, 38, 38);
+}
+
+.container2 {
+    background-color: rgb(24, 238, 238);
+    font-size: 16px;
+    height: 100vh;
+}
+
+.container2 main {
+    font-family: Monstreal;
+    font-size: 16px;
+}
+
+.container2 main h1 {
+    text-align: center;
+    padding-top: 2.2em;
+}
+
+.container2 main p {
+    margin-top: 2.875em;
+    margin-left: 2.3em;
+    width: 25ch;
+    font-size: .8em;
+}
+
+.container2 main .school {
+    margin-top: 2.175em;
+    margin-left: 1.9em;
+    width: 22ch;
+    font-size: 1em;
+}
+
+.container2 main img {
+    width: 7em;
+    height: 6em;
+    position: relative;
+    left: 11.4em;
+}
+
+.container3 {
+    background-color: rgb(69, 236, 236);
+    height: 100vh;
+    font-size: 16px;
+}
+
+.container3 main {
+    font-family: Monstreal;
+    font-size: 16px;
+}
+
+.container3 main h1 {
+    text-align: center;
+    padding-top: 2.2em;
+}
+
+
+
+/* Responsive */
+@media (min-width:480px) {
+    .container2 {
+        height: 101vh;
+    }
+}
+@media (min-width:600px) {
+    .container2 {
+        height: 102vh;
+    }
+}
+@media (min-width:801px) {
+    .container2 {
+        height: 104vh;
+    }
+}
+@media (min-width:1025px) {
+    .container2 {
+        height: 106vh;
+    }
+}
+@media (min-width:1281px) {
+    .container2 {
+        height: 108vh;
+    }
+}
