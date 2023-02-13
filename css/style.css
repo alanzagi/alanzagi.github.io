@@ -50,12 +50,12 @@
     border: .130em solid white;
     border-radius: 1.25em;
     background-color: black;
-    transition: 500ms;
 }
 
 .container1 main button:hover {
     background-color: rgb(9, 247, 247);
     border:  .130em solid black;
+    transition: 500ms !important;
 }
 
 .container1 main a {
@@ -173,7 +173,6 @@
     color: white;
     font-size: 1em;
 }
-
 
 /* Responsive */
 @media (min-width:480px) {
