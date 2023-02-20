@@ -82,7 +82,7 @@
 }
 
 .container2 {
-    background-color: rgb(24, 238, 238);
+    background-color: rgb(9, 247, 247);
     font-size: 16px;
     height: 100vh;
 }
@@ -119,7 +119,7 @@
 }
 
 .container3 {
-    background-color: rgb(69, 236, 236);
+    background-color: rgb(9, 247, 247);
     height: 100vh;
     font-size: 16px;
 }
@@ -142,7 +142,7 @@
 }
 
 .container4 {
-    background-color: rgb(80, 216, 216);
+    background-color: rgb(9, 247, 247);
     height: 100vh;
     font-size: 16px;
 }
@@ -159,19 +159,13 @@
 
 .container5 {
     background-color: rgb(41, 38, 38);
-    height: 5vh;
+    height: 50vh;
     font-size: 16px;
 }
 
 .container5 footer {
     font-family: Monstreal;
     font-size: 16px;
-}
-
-.container5 footer p {
-    text-align: center;
-    color: white;
-    font-size: 1em;
 }
 
 /* Responsive */
