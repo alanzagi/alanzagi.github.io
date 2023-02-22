@@ -106,9 +106,9 @@
 
 .container2 main .school {
     margin-top: 2.175em;
-    margin-left: 1.9em;
-    width: 22ch;
+    width: 25ch;
     font-size: 1em;
+    list-style-type: none;
 }
 
 .container2 main img {
@@ -159,13 +159,20 @@
 
 .container5 {
     background-color: rgb(41, 38, 38);
-    height: 50vh;
+    height: 5vh;
     font-size: 16px;
 }
 
 .container5 footer {
     font-family: Monstreal;
     font-size: 16px;
+}
+
+.container5 footer h1 {
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 5vh;
 }
 
 /* Responsive */
@@ -219,6 +226,7 @@
     }
     .container2 main .school {
         font-size: 1.45em;
+        margin-left: 0.7em;
     }
     .container2 main img {
         width: 30em;
