@@ -9,12 +9,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="bg-slate-100">
     <!-- Start Nav -->
     <nav class="fixed top-0 w-full bg-gray-900 bg-gray-900 border-gray-200 z-50">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://instagram.com/alanzagi" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">ALANxCODE</span>
+        <a href="https://instagram.com/alanzagi" class="flex items-center space-x-3 rtl:space-x-reverse" target="_blank">
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white"><span class="text-purple-700">A</span>LAN<span class="text-purple-700">x</span><span class="text-purple-700">C</span>ODE</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
@@ -48,16 +48,16 @@
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
           <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-200 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-gray-900 md:bg-transparent">
             <li>
-              <a href="#" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700" aria-current="page">Home</a>
+              <a href="#home" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700" aria-current="page">Home</a>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">About</a>
+              <a href="#about" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">About</a>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">Services</a>
+              <a href="#portfolio" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">Portfolio</a>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">Contact</a>
+              <a href="#contact" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">Contact</a>
             </li>
           </ul>
         </div>
@@ -85,11 +85,17 @@
             <form class="space-y-4" action="#">
               <div>
                 <label for="message-input" class="block mb-2 text-sm font-medium text-white">Pesan:</label>
-                <input type="text" name="text" id="message-input" class="border text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 bg-gray-600 border-purple-500 placeholder-purple-400 text-white" required />
+                <input
+                  type="text"
+                  name="message-input"
+                  id="message-input"
+                  class="border text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 bg-gray-600 border-purple-500 placeholder-purple-400 text-white"
+                  required
+                />
               </div>
               <button
                 id="message-submit-button"
-                type="submit"
+                type="button"
                 class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-purple-600 hover:bg-purple-700 focus:ring-purple-800 flex items-center justify-center gap-2"
               >
                 Kirim
@@ -105,7 +111,7 @@
     <!-- End Modal -->
 
     <!-- Start Main -->
-    <main class="relative h-screen background">
+    <main class="relative h-screen background" id="home">
       <span></span>
       <span></span>
       <span></span>
@@ -175,7 +181,7 @@
     <!-- End Main -->
 
     <!-- Start About Me -->
-    <div class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover">
+    <div class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover lg:bg-slate-100" id="about">
       <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
         <!--Main Col-->
         <div id="profile" class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-100 mx-6 lg:mx-0">
@@ -210,8 +216,8 @@
               Singkawang, Indonesia
             </p>
             <p class="pt-8 text-sm">
-              Saya bersekolah di SMK Negeri 3 Singkawang dengan menekuni jurusan <a href="instagram.com/famousclass_xi_pplg" target="_blank" class="font-bold">Pengembangan Perangkat Lunak & Gim (PPLG)</a> dengan pengalaman 2+ tahun dalam
-              membuat dan mengembangkan <i>website</i>. Hingga sekarang saya telah membuat puluhan <i>websites</i> dengan berbagai tema dan fungsi yang berbeda-beda.
+              Saya bersekolah di SMK Negeri 3 Singkawang studi jurusan <a href="instagram.com/famousclass_xi_pplg" target="_blank" class="font-bold">Pengembangan Perangkat Lunak & Gim (PPLG)</a> dengan pengalaman 2+ tahun dalam membuat dan
+              mengembangkan <i>website</i>. Hingga sekarang saya telah membuat puluhan <i>websites</i> dengan berbagai tema dan fungsi yang berbeda-beda.
             </p>
 
             <div class="pt-12 pb-8">
@@ -268,7 +274,7 @@
     <!-- End About Me  -->
 
     <!-- Start Portfolio -->
-    <div class="bg-gray-900 py-24 sm:py-32">
+    <div class="bg-gray-900 py-24 sm:py-32" id="portfolio">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl sm:text-center">
           <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Portfolio</h2>
@@ -312,7 +318,7 @@
           </div>
           <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
             <div class="rounded-2xl bg-gray-50 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center h-full">
-              <img src="img/alan.jpg" alt="" class="h-full w-full object-cover rounded-2xl" />
+              <img src="" alt="Web1" class="h-full w-full object-cover rounded-2xl" />
             </div>
           </div>
         </div>
@@ -356,7 +362,7 @@
           </div>
           <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
             <div class="rounded-2xl bg-gray-50 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center h-full">
-              <img src="img/alan.jpg" alt="" class="h-full w-full object-cover rounded-2xl" />
+              <img src="" alt="Web2" class="h-full w-full object-cover rounded-2xl" />
             </div>
           </div>
         </div>
@@ -400,15 +406,54 @@
           </div>
           <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
             <div class="rounded-2xl bg-gray-50 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center h-full">
-              <img src="img/alan.jpg" alt="" class="h-full w-full object-cover rounded-2xl" />
+              <img src="" alt="Web3" class="h-full w-full object-cover rounded-2xl" />
             </div>
           </div>
         </div>
         <!-- End Card 3 -->
       </div>
     </div>
-
     <!-- End Portfolio -->
+
+    <!-- Start Contact -->
+    <section class="bg-slate-100 text-gray-900" id="contact">
+      <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center">Contact Me</h2>
+        <p class="mb-8 lg:mb-16 font-light text-center text-gray-900 sm:text-xl">Butuh jasa/konsultasi seputar pembuatan <i>website</i>? kamu dapat mengisi form dibawah ini untuk dapat menghubungi saya.</p>
+        <form action="#" class="space-y-8" id="contact-form">
+          <div>
+            <label for="name-input" class="block mb-2 text-sm font-medium">Nama</label>
+            <input
+              type="text"
+              id="name-input"
+              class="shadow-sm bg-gray-800 border border-gray-700 text-white text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 placeholder-gray-400"
+              placeholder="Ketikkan nama lengkapmu disini.."
+              required
+            />
+          </div>
+          <div>
+            <label for="message-input2" class="block mb-2 text-sm font-medium">Pesan</label>
+            <textarea
+              id="message-input2"
+              rows="6"
+              class="block p-2.5 w-full text-sm text-white bg-gray-800 rounded-lg shadow-sm border border-gray-700 focus:ring-purple-500 focus:border-purple-500 placeholder-gray-400"
+              placeholder="Ketikkan pesanmu disini.."
+            ></textarea>
+          </div>
+          <button id="message-submit-button2" type="button" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+    <!-- End Contact -->
+
+    <!-- Start Footer -->
+    <footer class="bg-gray-900 text-white rounded-lg shadow m-4">
+      <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+        <span class="text-sm text-gray-400 sm:text-center"> © 2024 <a href="https://instagram.com/alanzagi" class="hover:underline text-purple-300"> ALANxCODE </a>. All Rights Reserved. </span>
+      </div>
+    </footer>
+
+    <!-- End Footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>

@@ -1,32 +1,18 @@
 // Fungsi untuk mengambil apapun data yang diinputkan di Pesan Whatsapp
 document.getElementById("message-submit-button").addEventListener("click", function () {
-  const inputText = document.getElementById("message-input").value;
+  const inputText = document.getElementById("message-input").value.trim(); // Menghapus spasi tambahan
   const whatsappUrl = `https://wa.me/6281521550913?text=${encodeURIComponent(inputText)}`;
   window.open(whatsappUrl, "_blank");
 });
 
-//Init tooltips
-tippy(".link", {
-  placement: "bottom",
-});
+document.getElementById("message-submit-button2").addEventListener("click", function () {
+  // Mengambil data dari input dan textarea
+  const nameInput = document.getElementById("name-input").value.trim();
+  const messageInput = document.getElementById("message-input2").value.trim();
 
-//Toggle mode
-const toggle = document.querySelector(".js-change-theme");
-const body = document.querySelector("body");
-const profile = document.getElementById("profile");
+  // Membuat URL WhatsApp
+  const whatsappUrl = `https://wa.me/6281521550913?text=${encodeURIComponent("Halo, Nama saya " + nameInput + " dan tujuan saya adalah " + messageInput)}`;
 
-toggle.addEventListener("click", () => {
-  if (body.classList.contains("text-gray-900")) {
-    toggle.innerHTML = "☀️";
-    body.classList.remove("text-gray-900");
-    body.classList.add("text-gray-100");
-    profile.classList.remove("bg-white");
-    profile.classList.add("bg-gray-900");
-  } else {
-    toggle.innerHTML = "🌙";
-    body.classList.remove("text-gray-100");
-    body.classList.add("text-gray-900");
-    profile.classList.remove("bg-gray-900");
-    profile.classList.add("bg-white");
-  }
+  // Membuka URL di tab baru
+  window.open(whatsappUrl, "_blank");
 });
