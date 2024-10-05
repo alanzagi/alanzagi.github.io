@@ -35,8 +35,9 @@ document.getElementById("message-submit-button2").addEventListener("click", func
     return; // Menghentikan eksekusi jika input kosong
   }
 
-  // Membuat URL WhatsApp
-  const whatsappUrl = `https://wa.me/6281521550913?text=${encodeURIComponent(nameInput + ": " + messageInput)}`;
+  const receiptMessage = `Nama Lengkap: ${nameInput} \nPesan: ${messageInput}`;
+
+  const whatsappUrl = `https://wa.me/6281521550913?text=${encodeURIComponent(receiptMessage)}`;
 
   // Membuka URL di tab baru
   window.open(whatsappUrl, "_blank");
