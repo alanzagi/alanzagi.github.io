@@ -1,6 +1,6 @@
 ## Portfolio Website Template - HTML5, TailwindCSS, Flowbite Framework
 
-Free template for company profile made using HTML5, TailwindCSS, and Flowbite!  
+Free template for portfolio website made using HTML5, TailwindCSS, and Flowbite!  
 It is a fully responsive template which you can use for your company or maybe for your own portfolio website.
 
 Demo Site: https://alanzagi.pplgxcode.biz.id/  
