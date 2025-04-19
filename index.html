@@ -5,53 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alan - Web Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="img/alanxcode.jpg" type="image/jpg" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-      .font-poppins {
-        font-family: "Poppins", sans-serif;
+      .font-inter {
+        font-family: "Inter", sans-serif;
       }
     </style>
   </head>
-  <body class="bg-slate-100 font-poppins">
+  <body class="bg-slate-100 font-inter text-gray-800">
     <!-- Start Nav -->
-    <nav class="fixed top-0 w-full bg-gray-900 bg-gray-900 border-gray-200 z-50">
+    <nav class="fixed top-0 w-full bg-transparent border-gray-200 z-50" data-aos="fade-down">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://instagram.com/alanzagi" class="flex items-center space-x-3 rtl:space-x-reverse" target="_blank">
-          <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-100"><span class="text-purple-700">A</span>LAN<span class="text-purple-700">x</span><span class="text-purple-700">C</span>ODE</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-100 hidden"><span class="text-purple-700">A</span>LAN<span class="text-purple-700">x</span><span class="text-purple-700">C</span>ODE</span>
         </a>
         <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
-            data-collapse-toggle="navbar-cta"
+            id="menuButton"
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg bg-white duration-300 hover:scale-110 md:hidden"
             aria-controls="navbar-cta"
             aria-expanded="false"
+            data-collapse-toggle="navbar-cta"
           >
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <span class="sr-only">Toggle Menu</span>
+
+            <!-- Icon Menu (default) -->
+            <svg id="menuIcon" class="w-5 h-5 transition-all duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+
+            <!-- Icon Close (hidden by default) -->
+            <svg id="closeIcon" class="w-5 h-5 hidden transition-all duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l15 12M1 13L16 1" />
             </svg>
           </button>
         </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-          <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-200 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-gray-900 md:bg-transparent">
+        <div class="hidden w-full md:flex md:justify-center md:order-1" id="navbar-cta">
+          <ul
+            class="flex flex-col font-medium p-4 mt-4 border border-gray-200 rounded-lg bg-white md:flex-row md:mt-0 md:border md:border-white/30 md:bg-white/20 md:backdrop-blur-md md:px-6 md:py-4 md:rounded-full md:text-sm md:shadow-lg md:space-x-10 md:mt-2"
+          >
             <li>
-              <a href="#beranda" class="block py-2 px-3 md:p-0 text-slate-100 rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700" aria-current="page">Beranda</a>
+              <a href="#home" id="nav-home" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Home</a>
             </li>
             <li>
-              <a href="#tentang" class="block py-2 px-3 md:p-0 text-slate-100 rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">Tentang</a>
+              <a href="#about" id="nav-about" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">About</a>
             </li>
             <li>
-              <a href="#portofolio" class="block py-2 px-3 md:p-0 text-slate-100 rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">Portofolio</a>
+              <a href="#projects" id="nav-projects" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Projects</a>
             </li>
             <li>
-              <a href="#kontak" class="block py-2 px-3 md:p-0 text-slate-100 rounded hover:bg-purple-700 md:hover:bg-transparent md:hover:text-purple-700">Kontak</a>
+              <a href="#skills" id="nav-skills" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Skills</a>
+            </li>
+            <li>
+              <a href="#experience" id="nav-experience" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Experience</a>
+            </li>
+            <li>
+              <a href="#contact" id="nav-contact" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Contact</a>
             </li>
           </ul>
         </div>
@@ -59,114 +74,79 @@
     </nav>
     <!-- End Nav -->
 
-    <!-- Start Modal -->
-    <div
-      id="authentication-modal"
-      tabindex="-1"
-      aria-hidden="true"
-      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full text-slate-100"
-    >
-      <div class="relative p-4 w-full max-w-md max-h-full">
-        <!-- Modal content -->
-        <div class="relative rounded-lg shadow bg-gray-700">
-          <!-- Modal header -->
-          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-600">
-            <h3 class="text-xl font-semibold text-slate-100">Masukkan Pesan Anda</h3>
-            <button type="button" class="end-2.5 text-gray-400 bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center hover:bg-gray-600 hover:text-slate-100" data-modal-hide="authentication-modal">
-              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-              </svg>
-              <span class="sr-only">Close modal</span>
-            </button>
-          </div>
-          <!-- Modal body -->
-          <div class="p-4 md:p-5">
-            <span class="pb-8">Pesan yang anda kirimkan otomatis akan dialihkan ke platform Whatsapp.</span>
-
-            <form class="space-y-4" action="#">
-              <div>
-                <label for="message-input" class="block mb-2 text-sm font-medium text-slate-100">Pesan:</label>
-                <input
-                  type="text"
-                  name="message-input"
-                  id="message-input"
-                  class="border text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 bg-gray-600 border-purple-500 placeholder-purple-400 text-slate-100"
-                  required
-                />
-              </div>
-              <button
-                id="message-submit-button"
-                type="button"
-                class="w-full text-slate-100 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-purple-600 hover:bg-purple-700 focus:ring-purple-800 flex items-center justify-center gap-2"
-              >
-                Kirim
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-                </svg>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Modal -->
-
     <!-- Start Main -->
-    <main class="relative h-screen background" id="beranda">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <div class="relative z-10 flex items-center justify-center h-full">
-        <div class="text-center max-w-2xl px-8">
-          <div class="">
-            <h1 class="text-4xl font-bold tracking-tight text-slate-100 sm:text-6xl" data-aos="fade-right">ALANxCODE</h1>
-            <p class="mt-2 text-lg leading-8 text-slate-100" data-aos="fade-left">- Web Developer / Designer / Educator -</p>
-            <div class="mt-4 flex items-center justify-center gap-x-6" data-aos="fade-up">
+    <main class="relative h-screen bg-gradient-to-r from-blue-200 to-cyan-200 md:pt-20" id="home">
+      <div class="relative z-10 flex items-center justify-center h-full" data-aos="zoom-in">
+        <div class="text-center max-w-2xl px-10 lg:px-0">
+          <div class="text-gray-800 space-y-6 pt-20">
+            <div class="space-y-4">
+              <div class="block rounded-full shadow-xl mx-auto -mt-16 h-40 w-40 border-8 border-white bg-cover bg-center" style="background-image: url('img/alan.jpg')"></div>
+              <h1 class="text-2xl font-bold tracking-tight sm:text-5xl">Alan Zagi</h1>
+            </div>
+            <div>
+              <p class="mt-2 text-xl leading-8 font-medium lg:text-2xl">
+                <span class="font-bold">2 years</span> of experience in fullstack web development, using <span class="font-bold">Laravel and Next.Js</span> for developing a website and web applications.
+              </p>
+            </div>
+            <div class="mt-4 flex items-center justify-center flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-5">
               <a
                 href="https://github.com/alanzagi"
-                class="flex items-center rounded-lg bg-purple-700 px-3.5 py-2.5 text-sm font-semibold text-slate-100 shadow-sm hover:bg-purple-600 hover:-translate-y-1 transition transform duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                class="flex items-center rounded-full bg-gray-800 text-white px-5 py-3 text-lg font-medium shadow-sm hover:bg-gray-900 hover:-translate-y-1 transition transform duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 target="_blank"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 inline-block align-middle mr-2">
+                Contact Me Here
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-4 w-4 inline-block align-middle ml-2">
+                  <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/6281521550913"
+                class="flex items-center rounded-full bg-white text-gray-800 px-6 py-3 text-lg font-medium shadow-sm hover:-translate-y-1 transition transform duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                target="_blank"
+              >
+                Download CV
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-4 w-4 inline-block align-middle ml-2">
+                  <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                </svg>
+              </a>
+            </div>
+            <div class="flex items-center justify-center space-x-4">
+              <a
+                href="https://www.linkedin.com/in/alan-zagi-3a6637243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+                class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="w-full h-5">
                   <path
-                    fill-rule="evenodd"
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.28 3.43 9.75 8.19 11.32.6.11.82-.26.82-.58 0-.29-.01-1.05-.01-2.06-3.17.69-3.84-1.53-3.84-1.53-.52-1.32-1.27-1.67-1.27-1.67-1.04-.72.08-.71.08-.71 1.15.08 1.76 1.18 1.76 1.18 1.03 1.77 2.71 1.26 3.37.96.11-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.69 0-1.26.45-2.29 1.18-3.1-.12-.3-.51-1.47.11-3.06 0 0 .97-.31 3.18 1.18.92-.26 1.92-.39 2.91-.39 1 .01 2 .13 2.91.39 2.2-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.12 3.06.73.81 1.18 1.85 1.18 3.1 0 4.42-2.7 5.4-5.27 5.69.41.35.78 1.05.78 2.11 0 1.52-.01 2.75-.01 3.12 0 .32.22.7.83.58C20.57 21.75 24 17.28 24 12c0-6.63-5.37-12-12-12z"
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
                   />
                 </svg>
-                Github </a
-              ><a
+              </a>
+
+              <a href="mailto:alanzagi@hotmail.com" target="_blank" class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-full h-5">
+                  <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                </svg>
+              </a>
+
+              <a href="https://github.com/alanzagi" target="_blank" class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-full h-5">
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                  />
+                </svg>
+              </a>
+
+              <a
                 href="https://instagram.com/alanzagi"
-                class="flex items-center rounded-lg bg-purple-700 px-3.5 py-2.5 text-sm font-semibold text-slate-100 shadow-sm hover:bg-purple-600 hover:-translate-y-1 transition transform duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 target="_blank"
+                class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-4 w-4 inline-block align-middle mr-2" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-full h-5">
                   <path
                     d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
                   />
                 </svg>
-                Instagram
               </a>
             </div>
           </div>
@@ -175,292 +155,327 @@
     </main>
     <!-- End Main -->
 
-    <!-- Start tentang Me -->
-    <div class="antialiased text-gray-900 leading-normal tracking-wider bg-cover lg:bg-slate-100" id="tentang">
-      <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
-        <!--Main Col-->
-        <div id="profile" class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-100 mx-6 lg:mx-0">
-          <div class="p-4 md:p-12 text-center lg:text-left">
-            <!-- Image for mobile view-->
-            <div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('img/alan.jpg')"></div>
+    <!-- Start About -->
+    <section class="bg-gray-50 py-32" id="about">
+      <div class="mx-auto px-10 text-center space-y-10 lg:px-96">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">👨‍💻 About Me</h2>
+        <p class="text-md text-gray-700 leading-relaxed">
+          Saya bersekolah di SMK Negeri 3 Singkawang studi <a href="https://instagram.com/famousclass_xi_pplg" target="_blank" class="font-bold">Pengembangan Perangkat Lunak & Gim (PPLG)</a> dengan pengalaman 2+ tahun dalam membuat dan
+          mengembangkan <i>website</i>. Hingga sekarang saya telah membuat puluhan <i>websites</i> dengan berbagai tema dan fungsi yang berbeda-beda.
+        </p>
+      </div>
+    </section>
+    <!-- End About -->
 
-            <h1 class="text-3xl font-bold pt-8 lg:pt-0">Alan "Zagi"</h1>
-            <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-purple-500 opacity-25"></div>
-            <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
-              <svg class="h-4 fill-current text-purple-700 pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
-              </svg>
-              Ketua OSIS
-              <a href="https://instagram.com/smkn3.osis" class="ml-2 text-purple-700" target="_blank">@smkn3.osis</a>
-            </p>
-            <p class="pt-1 text-base font-bold flex items-center justify-center lg:justify-start">
-              <svg class="h-4 fill-current text-purple-700 pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
-              </svg>
-              Programmer
-              <a href="https://instagram.com/alan_xcode" class="ml-2 text-purple-700" target="_blank">@alan_xcode</a>
-            </p>
-            <p class="pt-2 text-gray-600 text-xs lg:text-md flex items-center justify-center lg:justify-start">
-              <svg class="h-4 fill-current text-purple-700 pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  fill-rule="evenodd"
-                  d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Singkawang, Indonesia
-            </p>
-            <p class="pt-8 text-sm">
-              Saya bersekolah di SMK Negeri 3 Singkawang studi jurusan <a href="https://instagram.com/famousclass_xi_pplg" target="_blank" class="font-bold">Pengembangan Perangkat Lunak & Gim (PPLG)</a> dengan pengalaman 2+ tahun dalam
-              membuat dan mengembangkan <i>website</i>. Hingga sekarang saya telah membuat puluhan <i>websites</i> dengan berbagai tema dan fungsi yang berbeda-beda.
-            </p>
+    <!-- Start Projects -->
+    <section class="py-16 bg-gray-50" id="projects">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">🚀 Projects</h2>
 
-            <div class="pt-12 pb-8 lg:pt-4 lg:pb-4">
-              <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="bg-purple-700 hover:bg-purple-900 text-slate-100 font-bold py-2 px-4 rounded-full flex items-center m-auto lg:m-0">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 mr-2" viewBox="0 0 16 16">
-                  <path
-                    d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
-                  />
-                </svg>
-                Hubungi Saya
-              </button>
+        <div class="grid gap-8 px-10 md:grid-cols-2">
+          <div class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
+            <img src="img/lankas.png" alt="Aplikasi Pengelolaan Uang Kas Kelas" class="w-full h-48 object-cover object-left object-top border-2 border-gray-800 rounded-lg" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-900">LANKAS - Aplikasi Pengelolaan Uang Kas</h3>
+              <p class="text-gray-600 text-md mt-2">
+                Lankas is a web-based class cash management system developed with Laravel. It allows efficient tracking of payments, expenditures, and financial reports. Features include profile management, CRUD functionality, and PDF
+                generation.
+              </p>
+              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" />
+                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" />
+                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" />
+              </div>
             </div>
-
-            <div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
-              <a class="link" href="https://facebook.com/alanzagirekber" data-tippy-content="alanzagirekber" target="_blank">
-                <svg class="h-6 fill-current text-gray-600 hover:text-purple-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>Facebook</title>
-                  <path
-                    d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"
-                  />
-                </svg>
-              </a>
-              <a class="link" href="https://github.com/alanzagi" data-tippy-content="@alanzagi" target="_blank">
-                <svg class="h-6 fill-current text-gray-600 hover:text-purple-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>GitHub</title>
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
-              </a>
-              <a class="link" href="https://instagram.com/alanzagi" data-tippy-content="@alanzagi" target="_blank">
-                <svg class="h-6 fill-current text-gray-600 hover:text-purple-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <title>Instagram</title>
-                  <path
-                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <!-- Use https://simpleicons.org/ to find the svg for your preferred product -->
           </div>
-        </div>
 
-        <!--Img Col-->
-        <div class="w-full lg:w-2/5">
-          <!-- Big profile image for side bar (desktop) -->
-          <img src="img/alan.jpg" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block" />
+          <div class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
+            <img src="img/makmurcatering.png" alt="Makmur Catering" class="w-full h-48 object-cover object-left border-2 border-gray-800 rounded-lg" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-900">MCatering - Company Profile & Ordering</h3>
+              <p class="text-gray-600 text-md mt-2">
+                Makmur Catering is a Laravel-based website designed for catering services, featuring a user-friendly interface for profile management, online ordering, and menu displays. Built with TailwindCSS and Flowbite, it offers an
+                efficient platform for catering businesses.
+              </p>
+              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" />
+                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" />
+                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" />
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
+            <img src="img/lanbakery.png" alt="Makmur Catering" class="w-full h-48 object-cover object-left border-2 border-gray-800 rounded-lg" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-900">LANBAKERY - Company Profile & Ordering</h3>
+              <p class="text-gray-600 text-md mt-2">
+                LANBAKERY is a complete bakery management website built with Laravel. It features product listings, order processing, and payment integration. Additionally, it includes an admin panel for the owner to manage stock and
+                customize the website's appearance.
+              </p>
+              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" />
+                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" />
+                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- End tentang Me  -->
+    </section>
+    <!-- End Projects -->
 
-    <!-- Start portofolio -->
-    <div class="bg-gray-900 pt-20 pb-14" id="portofolio">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl sm:text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">Portofolio</h2>
-          <p class="mt-2 text-lg leading-8 text-slate-100 text-sm lg:text-lg">Berikut adalah daftar beberapa <i>project website </i> yang pernah saya tangani baik itu <i>project</i> bersifat pribadi maupun komersial</p>
+    <!-- Start Skills -->
+    <section class="py-10 px-10 bg-gray-50" id="skills">
+      <div class="mb-12 text-center">
+        <h2 class="text-4xl font-bold inline-block text-gray-900">🎯 Specialized Skills</h2>
+      </div>
+      <div class="grid grid-cols-4 lg:grid-cols-5 gap-6 px-4 sm:px-8 md:px-16 lg:px-56 lg:gap-14" data-aos="fade-up">
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="TailwindCSS" />
         </div>
-        <div class="pb-4 grid gap-y-4">
-          <!-- Start Card 1 -->
-          <div class="mx-auto mt-8 max-w-2xl rounded-3xl ring-1 hover:ring-2 ring-purple-700 lg:mx-0 lg:flex lg:max-w-none">
-            <div class="p-8 sm:p-10 lg:flex-auto">
-              <h3 class="text-2xl font-bold tracking-tight text-slate-100">Perwira Geprek</h3>
-              <p class="mt-6 text-base leading-7 text-slate-100">
-                Perwira Geprek adalah <i>Website Company Profile</i> yang berisi rincian Halaman Beranda, Tentang, Layanan, dan Kontak Restoran. Juga tersedia fitur untuk menghubungi kontak restoran dan dilengkapi sistem pencatatan data
-                pelanggan.
-              </p>
-              <div class="mt-10 flex items-center gap-x-4">
-                <h4 class="flex-none text-sm font-semibold leading-6 text-purple-600"></h4>
-                <div class="h-px flex-auto bg-purple-700"></div>
-              </div>
-              <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 sm:grid-cols-2 sm:gap-6 text-slate-100">
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  4 Halaman Utama
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Hubungi Kontak
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Pencatatan Data Pelanggan
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Dan seterusnya
-                </li>
-              </ul>
-            </div>
-            <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-              <a href="https://perwirageprek.pplgxcode.biz.id/" target="_blank" class="rounded-2xl bg-gray-50 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center h-full">
-                <div class="overflow-hidden rounded-2xl bg-black">
-                  <img src="img/perwirageprek.png" alt="Perwira Geprek" class="opacity-75 transition duration-300 h-full w-full object-cover rounded-2xl hover:scale-110 hover:opacity-100" />
-                </div>
-              </a>
-            </div>
-          </div>
-          <!-- End Card 1 -->
-
-          <!-- Start Card 2 -->
-          <div class="mx-auto mt-8 max-w-2xl rounded-3xl ring-1 hover:ring-2 ring-purple-700 lg:mx-0 lg:flex lg:max-w-none">
-            <div class="p-8 sm:p-10 lg:flex-auto">
-              <h3 class="text-2xl font-bold tracking-tight text-slate-100">Daris Travel</h3>
-              <p class="mt-6 text-base leading-7 text-slate-100">
-                Daris Travel adalah <i>Website Company Profile</i> yang berisi rincian Halaman Beranda, Tentang, Layanan, dan Kontak Perusahaan. Juga tersedia fitur untuk menghubungi kontak perusahaan dan dilengkapi sistem pencatatan data
-                pelanggan.
-              </p>
-              <div class="mt-10 flex items-center gap-x-4">
-                <h4 class="flex-none text-sm font-semibold leading-6 text-purple-600"></h4>
-                <div class="h-px flex-auto bg-purple-700"></div>
-              </div>
-              <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 sm:grid-cols-2 sm:gap-6 text-slate-100">
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  4 Halaman Utama
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Hubungi Kontak
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Pencatatan Data Pelanggan
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Dan seterusnya
-                </li>
-              </ul>
-            </div>
-            <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-              <a href="https://daristravel.pplgxcode.biz.id/" target="_blank" class="rounded-2xl bg-gray-50 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center h-full">
-                <div class="overflow-hidden rounded-2xl bg-black h-full w-full">
-                  <img src="img/daristravel.png" alt="Perwira Geprek" class="opacity-75 transition duration-300 h-full w-full object-cover rounded-2xl hover:scale-110 hover:opacity-100" />
-                </div>
-              </a>
-            </div>
-          </div>
-          <!-- End Card 2 -->
-
-          <!-- Start Card 3 -->
-          <div class="mx-auto mt-8 max-w-2xl rounded-3xl ring-1 hover:ring-2 ring-purple-700 lg:mx-0 lg:flex lg:max-w-none">
-            <div class="p-8 sm:p-10 lg:flex-auto">
-              <h3 class="text-2xl font-bold tracking-tight text-slate-100">Makmur Catering</h3>
-              <p class="mt-6 text-base leading-7 text-slate-100">
-                Makmur Catering adalah <i>Website Company Profile + Ordering</i> yang berisi rincian Halaman Beranda, Tentang, Pemesanan, dan Kontak Perusahaan. Tersedia fitur untuk memesan menu yang otomatis mengirimkan rincian struk dan
-                pesanan ke Whatsapp Perusahaan. Juga dilengkapi sistem pencatatan data pelanggan
-              </p>
-              <div class="mt-10 flex items-center gap-x-4">
-                <h4 class="flex-none text-sm font-semibold leading-6 text-purple-600"></h4>
-                <div class="h-px flex-auto bg-purple-700"></div>
-              </div>
-              <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 sm:grid-cols-2 sm:gap-6 text-slate-100">
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  4 Halaman Utama
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Hubungi Kontak
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Pencatatan Data Pelanggan
-                </li>
-                <li class="flex gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-purple-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                  </svg>
-                  Struk Pesanan Otomatis
-                </li>
-              </ul>
-            </div>
-            <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-              <a href="https://makmurcatering.pplgxcode.biz.id/" target="_blank" class="rounded-2xl bg-gray-50 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center h-full">
-                <div class="overflow-hidden rounded-2xl bg-black h-full w-full">
-                  <img src="img/makmurcatering.png" alt="Perwira Geprek" class="opacity-75 transition duration-300 h-full w-full object-cover rounded-2xl hover:scale-110 hover:opacity-100" />
-                </div>
-              </a>
-            </div>
-          </div>
-          <!-- End Card 3 -->
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="img/bootstrap.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="Bootstrap" />
         </div>
-        <div class="flex justify-center mt-8">
-          <a
-            href="https://instagram.com/alanzagi"
-            target="_blank"
-            class="bg-purple-700 text-lg font-semibold px-3 py-3 rounded-2xl text-slate-100 transition duration-300 hover:bg-transparent hover:text-purple-700 hover:ring-2 hover:ring-purple-700"
-          >
-            Lihat <i>Project</i> Lainnya
-          </a>
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="img/PHP-logo.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="PHP" />
+        </div>
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="Laravel" />
+        </div>
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://bayumaulanaikhsan.my.id/images/icon/javascript.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="Javascript" />
+        </div>
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://bayumaulanaikhsan.my.id/images/icon/typescript.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="Typescript" />
+        </div>
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://bayumaulanaikhsan.my.id/images/icon/mysql.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="MySQL" />
+        </div>
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="ReactJS" />
+        </div>
+        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="img/next-js-logo.png" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="NextJS" />
         </div>
       </div>
-    </div>
-    <!-- End portofolio -->
+    </section>
+    <!-- End Skills -->
+
+    <!-- Start Experience -->
+    <section class="relative px-4 py-10 sm:px-6 lg:px-12 bg-gray-50" id="experience">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center">🏢 Work Experiences</h2>
+
+        <div class="relative">
+          <!-- Garis tengah desktop -->
+          <div class="hidden lg:block absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300"></div>
+
+          <!-- DESKTOP TIMELINE -->
+          <div class="hidden lg:block">
+            <!-- Left 1 card -->
+            <div class="mb-12 flex justify-between items-start" data-aos="fade-up">
+              <div class="w-1/2 pr-8 text-right relative">
+                <span class="absolute -right-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
+                  <img src="img/alanxcode.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                </span>
+                <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
+                  <h3 class="font-bold text-lg">CEO & Founder</h3>
+                  <p class="text-sm text-gray-600 font-semibold">ALANxCODE Programming Agency</p>
+                  <p class="text-sm text-gray-700 mt-2">I am the CEO & Founder of ALANxCODE, specializing in web programming. I lead a team delivering custom websites and applications for clients.</p>
+                  <p class="mt-3 text-sm text-gray-500">January 2023 - Present</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right 2 card -->
+            <div class="mb-12 flex justify-between items-start" data-aos="fade-up" data-aos-delay="100">
+              <div class="w-1/2"></div>
+              <div class="w-1/2 pl-8 relative">
+                <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
+                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                </span>
+                <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
+                  <h3 class="font-bold text-lg">Producer & Co-Teacher</h3>
+                  <p class="text-sm text-gray-600 font-semibold">Cinematography SMK Negeri 3 Singkawang</p>
+                  <p class="text-sm text-gray-700 mt-2">
+                    As a Producer & Co-Teacher, I led short film projects, taught cinematography, supervised the extracurricular team, and handled various photo and video documentation tasks for quality visual content.
+                  </p>
+                  <p class="mt-3 text-sm text-gray-500">September 2023 - Present</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Left 3 card -->
+            <div class="mb-12 flex justify-between items-start" data-aos="fade-up">
+              <div class="w-1/2 pr-8 text-right relative">
+                <span class="absolute -right-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
+                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                </span>
+                <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
+                  <h3 class="font-bold text-lg">President</h3>
+                  <p class="text-sm text-gray-600 font-semibold">OSIS SMK Negeri 3 Singkawang</p>
+                  <p class="text-sm text-gray-700 mt-2">
+                    As OSIS President, I led large events, represented the school externally, organized programs, and delivered public speeches. My leadership positively impacted student engagement and strengthened the school community.
+                  </p>
+                  <p class="mt-3 text-sm text-gray-500">June 2024 - June 2025</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right 4 card -->
+            <div class="mb-12 flex justify-between items-start" data-aos="fade-up" data-aos-delay="100">
+              <div class="w-1/2"></div>
+              <div class="w-1/2 pl-8 relative">
+                <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
+                  <img src="img/komdigi.png" alt="" class="h-full w-full object-contain rounded-full" />
+                </span>
+                <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
+                  <h3 class="font-bold text-lg">Internship Web Developer</h3>
+                  <p class="text-sm text-gray-600 font-semibold">Diskomdigi Kota Singkawang</p>
+                  <p class="text-sm text-gray-700 mt-2">As an Internship Web Developer, I worked on websites and Mikrotik networks. My role included design, coding, and ensuring fast, secure connections.</p>
+                  <p class="mt-3 text-sm text-gray-500">June 2025 - January 2026</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right 5 card -->
+            <div class="mb-12 flex justify-between items-start" data-aos="fade-up">
+              <div class="w-1/2 pr-8 text-right relative">
+                <span class="absolute -right-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
+                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                </span>
+                <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
+                  <h3 class="font-bold text-lg">Chairman</h3>
+                  <p class="text-sm text-gray-600 font-semibold">MPK SMK Negeri 3 Singkawang</p>
+                  <p class="text-sm text-gray-700 mt-2">
+                    As Chairman of MPK, I led student council meetings, represented student interests, organized school activities, and collaborated with administration to ensure a positive and engaging school environment for all students.
+                  </p>
+                  <p class="mt-3 text-sm text-gray-500">June 2025 - June 2026</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOBILE VERSION -->
+          <div class="lg:hidden relative">
+            <!-- Vertical line mobile -->
+            <div class="absolute left-3 top-0 bottom-0 w-1 bg-gray-300"></div>
+
+            <!-- Card 1 -->
+            <div class="mb-12 ml-6 relative" data-aos="fade-up">
+              <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
+                <img src="img/alanxcode.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+              </span>
+              <div class="bg-white rounded-lg shadow-md p-6 w-full">
+                <h3 class="font-bold text-lg">CEO & Founder</h3>
+                <p class="text-sm text-gray-600 font-semibold">ALANxCODE Programming Agency</p>
+                <p class="text-sm text-gray-700 mt-2">I am the CEO & Founder of ALANxCODE, specializing in web programming. I lead a team delivering custom websites and applications for clients.</p>
+                <p class="mt-3 text-sm text-gray-500">January 2023 - Present</p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
+              <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
+                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+              </span>
+              <div class="bg-white rounded-lg shadow-md p-6 w-full">
+                <h3 class="font-bold text-lg">Producer & Co-Teacher</h3>
+                <p class="text-sm text-gray-600 font-semibold">Cinematography SMK Negeri 3 Singkawang</p>
+                <p class="text-sm text-gray-700 mt-2">
+                  As a Producer & Co-Teacher, I led short film projects, taught cinematography, supervised the extracurricular team, and handled various photo and video documentation tasks for quality visual content.
+                </p>
+                <p class="mt-3 text-sm text-gray-500">September 2023 - Present</p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
+              <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
+                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+              </span>
+              <div class="bg-white rounded-lg shadow-md p-6 w-full">
+                <h3 class="font-bold text-lg">President</h3>
+                <p class="text-sm text-gray-600 font-semibold">OSIS SMK Negeri 3 Singkawang</p>
+                <p class="text-sm text-gray-700 mt-2">
+                  As OSIS President, I led large events, represented the school externally, organized programs, and delivered public speeches. My leadership positively impacted student engagement and strengthened the school community.
+                </p>
+                <p class="mt-3 text-sm text-gray-500">June 2024 - June 2025</p>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
+              <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
+                <img src="img/komdigi.png" alt="" class="h-full w-full object-contain rounded-full" />
+              </span>
+              <div class="bg-white rounded-lg shadow-md p-6 w-full">
+                <h3 class="font-bold text-lg">Internship Web Developer</h3>
+                <p class="text-sm text-gray-600 font-semibold">Diskomdigi Kota Singkawang</p>
+                <p class="text-sm text-gray-700 mt-2">As an Internship Web Developer, I worked on websites and Mikrotik networks. My role included design, coding, and ensuring fast, secure connections.</p>
+                <p class="mt-3 text-sm text-gray-500">June 2025 - January 2026</p>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
+              <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
+                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+              </span>
+              <div class="bg-white rounded-lg shadow-md p-6 w-full">
+                <h3 class="font-bold text-lg">Chairman</h3>
+                <p class="text-sm text-gray-600 font-semibold">MPK SMK Negeri 3 Singkawang</p>
+                <p class="text-sm text-gray-700 mt-2">
+                  As Chairman of MPK, I led student council meetings, represented student interests, organized school activities, and collaborated with administration to ensure a positive and engaging school environment for all students.
+                </p>
+                <p class="mt-3 text-sm text-gray-500">June 2025 - June 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Experience -->
 
     <!-- Start Contact -->
-    <section class="bg-slate-100 text-gray-900" id="kontak">
+    <section class="bg-gray-50 text-gray-900" id="contact">
       <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center">Kontak Saya</h2>
-        <p class="mb-8 lg:mb-16 font-light text-center text-gray-900 sm:text-xl">Butuh jasa/konsultasi seputar pembuatan <i>website</i>? kamu dapat mengisi form dibawah ini untuk dapat menghubungi saya.</p>
-        <form action="#" class="space-y-8" id="contact-form">
+        <h2 class="mb-4 text-4xl tracking-tight font-bold text-center">Get In Touch</h2>
+        <p class="mb-8 lg:mb-16 font-light text-center text-gray-900 sm:text-xl">
+          Additionally, I'm currently open for freelance or part-time opportunities. If you have an interesting project or need extra hands on deck, don't hesitate to get in touch!
+          <br />
+          <br />Feel free to get in touch with me whenever you need assistance or want to discuss anything. I'm here to help you with pleasure! 🚀
+        </p>
+        <form action="#" class="space-y-4" id="contact-form">
           <div>
             <label for="name-input" class="block mb-2 text-sm font-medium">Nama</label>
             <input
-              type="text"
               id="name-input"
-              class="shadow-sm bg-gray-800 border border-gray-700 text-slate-100 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 placeholder-gray-400"
+              type="text"
+              class="shadow-sm bg-white border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-gray-800 focus:border-gray-800 block w-full p-2.5 placeholder-gray-500"
               placeholder="Ketikkan nama lengkapmu disini.."
               required
             />
           </div>
           <div>
-            <label for="message-input2" class="block mb-2 text-sm font-medium">Pesan</label>
+            <label for="message-input" class="block mb-2 text-sm font-medium">Pesan</label>
             <textarea
-              id="message-input2"
+              id="message-input"
               rows="6"
-              class="block p-2.5 w-full text-sm text-slate-100 bg-gray-800 rounded-lg shadow-sm border border-gray-700 focus:ring-purple-500 focus:border-purple-500 placeholder-gray-400"
+              class="block p-2.5 w-full text-sm text-gray-700 bg-white rounded-lg shadow-sm border border-gray-200 focus:ring-gray-800 focus:border-gray-800 placeholder-gray-500"
               placeholder="Ketikkan pesanmu disini.."
+              required
             ></textarea>
           </div>
-          <button id="message-submit-button2" type="button" class="py-3 px-5 text-sm font-medium text-center text-slate-100 rounded-lg bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">
-            Kirim Pesan
+          <button type="button" onclick="sendToWhatsApp()" class="py-3 px-5 text-sm font-medium text-center text-slate-100 rounded-full bg-gray-800 duration-200 flex items-center space-x-2 border border-gray-800 hover:bg-transparent group">
+            <span class="text-white text-md group-hover:text-gray-800">Submit</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 fill-current text-white group-hover:text-gray-800">
+              <path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z" />
+            </svg>
           </button>
         </form>
       </div>
@@ -468,22 +483,18 @@
     <!-- End Contact -->
 
     <!-- Start Footer -->
-    <footer class="bg-gray-900 text-slate-100 rounded-lg shadow m-4">
-      <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <span class="text-sm sm:text-center"> © 2024 <a href="https://instagram.com/alanzagi" class="hover:underline text-purple-700"> ALANxCODE </a>. All Rights Reserved. </span>
+    <footer class="bg-gray-50 pb-20">
+      <div class="w-full mx-auto max-w-screen-xl p-4 text-center text-xs">
+        <span class="sm:text-center"> © 2025 <a href="https://instagram.com/alanzagi" class="hover:underline text-gray-900 font-bold"> Alan </a>. All Rights Reserved. </span>
       </div>
     </footer>
     <!-- End Footer -->
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@4"></script>
     <script src="js/script.js"></script>
     <script>
       AOS.init({
-        duration: 2000,
+        duration: 500,
         offset: 200,
         delay: 100,
         once: true,

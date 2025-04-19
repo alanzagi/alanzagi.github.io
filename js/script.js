@@ -1,44 +1,63 @@
-// Fungsi untuk mengambil apapun data yang diinputkan di Pesan Whatsapp
-document.getElementById("message-submit-button").addEventListener("click", function () {
-  const inputText = document.getElementById("message-input").value.trim(); // Menghapus spasi tambahan
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
 
-  // Memeriksa apakah input kosong
-  if (inputText === "") {
-    Swal.fire({
-      icon: "error",
-      title: "Gagal mengirim",
-      text: "Harap isi semua bidang sebelum mengirim pesan",
-      confirmButtonColor: "#f44336", // Ganti dengan warna yang diinginkan
-      confirmButtonText: "OK",
-    });
-    return; // Menghentikan eksekusi jika input kosong
-  }
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.clientHeight;
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
 
-  const whatsappUrl = `https://wa.me/6281521550913?text=${encodeURIComponent(inputText)}`;
-  window.open(whatsappUrl, "_blank");
+  navLinks.forEach((link) => {
+    link.classList.remove("font-bold", "text-blue-600");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("font-bold", "text-blue-600");
+    }
+  });
 });
 
-document.getElementById("message-submit-button2").addEventListener("click", function () {
-  // Mengambil data dari input dan textarea
-  const nameInput = document.getElementById("name-input").value.trim();
-  const messageInput = document.getElementById("message-input2").value.trim();
+const menuButton = document.getElementById("menuButton");
+const navbarCta = document.getElementById("navbar-cta");
+const menuIcon = document.getElementById("menuIcon");
+const closeIcon = document.getElementById("closeIcon");
 
-  // Memeriksa apakah input kosong
-  if (nameInput === "" || messageInput === "") {
+menuButton.addEventListener("click", () => {
+  navbarCta.classList.toggle("hidden");
+  menuIcon.classList.toggle("hidden");
+  closeIcon.classList.toggle("hidden");
+});
+
+// Tutup navbar saat salah satu nav-link diklik (opsional tapi UX bagus)
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth < 768) {
+      navbarCta.classList.add("hidden");
+      menuIcon.classList.remove("hidden");
+      closeIcon.classList.add("hidden");
+    }
+  });
+});
+
+function sendToWhatsApp() {
+  const name = document.getElementById("name-input").value.trim();
+  const message = document.getElementById("message-input").value.trim();
+
+  if (!name || !message) {
     Swal.fire({
-      icon: "error",
-      title: "Gagal mengirim",
-      text: "Harap isi semua bidang sebelum mengirim pesan",
-      confirmButtonColor: "#f44336", // Ganti dengan warna yang diinginkan
-      confirmButtonText: "OK",
+      icon: "warning",
+      title: "Oops!",
+      text: "Isi nama dan pesan dulu ya!",
+      confirmButtonColor: "#5e57e4",
     });
-    return; // Menghentikan eksekusi jika input kosong
+    return;
   }
 
-  const receiptMessage = `Nama Lengkap: ${nameInput} \nPesan: ${messageInput}`;
+  const phone = "62815213350913";
+  const text = `Halo, Nama saya Alan ${name}. Pesan saya adalah \n${message}`;
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
-  const whatsappUrl = `https://wa.me/6281521550913?text=${encodeURIComponent(receiptMessage)}`;
-
-  // Membuka URL di tab baru
-  window.open(whatsappUrl, "_blank");
-});
+  window.open(url, "_blank");
+}
