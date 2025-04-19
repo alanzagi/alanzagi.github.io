@@ -55,7 +55,7 @@ function sendToWhatsApp() {
     return;
   }
 
-  const phone = "62815213350913";
+  const phone = "6281521550913";
   const text = `Halo, Nama saya Alan ${name}. Pesan saya adalah \n${message}`;
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
