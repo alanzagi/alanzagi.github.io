@@ -60,11 +60,14 @@
   </head>
   <body class="bg-slate-100 font-inter text-gray-800">
     <!-- Start Nav -->
-    <nav class="fixed top-0 w-full bg-transparent border-gray-200 z-50" data-aos="fade-down">
+    <nav class="fixed top-0 w-full bg-transparent border-gray-200 z-50" data-aos="fade-down" role="navigation" aria-label="Main Navigation">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://instagram.com/alanzagi" class="flex items-center space-x-3 rtl:space-x-reverse" target="_blank">
-          <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-100 hidden"><span class="text-purple-700">A</span>LAN<span class="text-purple-700">x</span><span class="text-purple-700">C</span>ODE</span>
+        <!-- Branding -->
+        <a href="https://instagram.com/alanzagi" class="flex items-center space-x-3 rtl:space-x-reverse" target="_blank" rel="noopener noreferrer" aria-label="Visit Alan Zagi Instagram">
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-100 hidden"> <span class="text-purple-700">A</span>LAN<span class="text-purple-700">x</span><span class="text-purple-700">C</span>ODE </span>
         </a>
+
+        <!-- Mobile Toggle -->
         <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             id="menuButton"
@@ -72,43 +75,32 @@
             class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg bg-white duration-300 hover:scale-110 md:hidden"
             aria-controls="navbar-cta"
             aria-expanded="false"
+            aria-label="Toggle navigation menu"
             data-collapse-toggle="navbar-cta"
           >
             <span class="sr-only">Toggle Menu</span>
-
-            <!-- Icon Menu (default) -->
-            <svg id="menuIcon" class="w-5 h-5 transition-all duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <!-- Icon Menu -->
+            <svg id="menuIcon" class="w-5 h-5 transition-all duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14" aria-hidden="true">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
-
-            <!-- Icon Close (hidden by default) -->
-            <svg id="closeIcon" class="w-5 h-5 hidden transition-all duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <!-- Icon Close -->
+            <svg id="closeIcon" class="w-5 h-5 hidden transition-all duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14" aria-hidden="true">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l15 12M1 13L16 1" />
             </svg>
           </button>
         </div>
+
+        <!-- Main Menu -->
         <div class="hidden w-full md:flex md:justify-center md:order-1" id="navbar-cta">
           <ul
             class="flex flex-col font-medium p-4 mt-4 border border-gray-200 rounded-lg bg-white md:flex-row md:mt-0 md:border md:border-white/30 md:bg-white/20 md:backdrop-blur-md md:px-6 md:py-4 md:rounded-full md:text-sm md:shadow-lg md:space-x-10 md:mt-2"
           >
-            <li>
-              <a href="#home" id="nav-home" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Home</a>
-            </li>
-            <li>
-              <a href="#about" id="nav-about" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">About</a>
-            </li>
-            <li>
-              <a href="#projects" id="nav-projects" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Projects</a>
-            </li>
-            <li>
-              <a href="#skills" id="nav-skills" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Skills</a>
-            </li>
-            <li>
-              <a href="#experience" id="nav-experience" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Experience</a>
-            </li>
-            <li>
-              <a href="#contact" id="nav-contact" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent">Contact</a>
-            </li>
+            <li><a href="#home" id="nav-home" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent" aria-label="Go to Home section">Home</a></li>
+            <li><a href="#about" id="nav-about" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent" aria-label="Go to About section">About</a></li>
+            <li><a href="#projects" id="nav-projects" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent" aria-label="Go to Projects section">Projects</a></li>
+            <li><a href="#skills" id="nav-skills" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent" aria-label="Go to Skills section">Skills</a></li>
+            <li><a href="#experience" id="nav-experience" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent" aria-label="Go to Experience section">Experience</a></li>
+            <li><a href="#contact" id="nav-contact" class="nav-link block py-2 px-3 md:p-0 text-gray-800 rounded hover:bg-slate-200 md:hover:bg-transparent" aria-label="Go to Contact section">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -117,26 +109,25 @@
 
     <!-- Start Main -->
     <main class="relative h-screen bg-gradient-to-r from-blue-200 to-cyan-200 md:pt-20" id="home">
-      <div class="relative z-10 flex items-center justify-center h-full" data-aos="zoom-in">
+      <section class="relative z-10 flex items-center justify-center h-full" data-aos="zoom-in">
         <div class="text-center max-w-2xl px-10 lg:px-0">
-          <div class="text-gray-800 space-y-6 pt-20">
+          <header class="text-gray-800 space-y-6 pt-20">
             <div class="space-y-4">
-              <div class="block rounded-full shadow-xl mx-auto -mt-16 h-40 w-40 border-8 border-white bg-cover bg-center" style="background-image: url('img/alan.jpg')"></div>
+              <img src="img/alan.jpg" alt="Portrait of Alan Zagi" class="block rounded-full shadow-xl mx-auto -mt-16 h-40 w-40 border-8 border-white object-cover" />
               <h1 class="text-2xl font-bold tracking-tight sm:text-5xl">Alan Zagi</h1>
             </div>
-            <div>
-              <p class="mt-2 text-xl leading-8 font-medium lg:text-2xl">
-                <span class="font-bold">2 years</span> of experience in fullstack web development, using <span class="font-bold">Laravel and Next.Js</span> for developing a website and web applications.
-              </p>
-            </div>
+            <h2 class="mt-2 text-xl leading-8 font-medium lg:text-2xl"><strong>2 years</strong> of experience in fullstack web development, using <strong>Laravel and Next.js</strong> to build websites and web applications.</h2>
+
             <div class="mt-4 flex items-center justify-center flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-5">
               <a
                 href="https://wa.me/6281521550913"
                 class="flex items-center rounded-full bg-gray-800 text-white px-5 py-3 text-lg font-medium shadow-sm hover:bg-gray-900 hover:-translate-y-1 transition transform duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 target="_blank"
+                rel="noopener"
+                aria-label="Contact Alan via WhatsApp"
               >
                 Contact Me Here
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-4 w-4 inline-block align-middle ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-4 w-4 ml-2">
                   <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
                 </svg>
               </a>
@@ -144,17 +135,22 @@
                 href="https://wa.me/6281521550913"
                 class="flex items-center rounded-full bg-white text-gray-800 px-6 py-3 text-lg font-medium shadow-sm hover:-translate-y-1 transition transform duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 target="_blank"
+                rel="noopener"
+                aria-label="Download Alan Zagi's CV"
               >
                 Download CV
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-4 w-4 inline-block align-middle ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-4 w-4 ml-2">
                   <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
                 </svg>
               </a>
             </div>
-            <div class="flex items-center justify-center space-x-4">
+
+            <nav class="flex items-center justify-center space-x-4" aria-label="Social media">
               <a
-                href="https://www.linkedin.com/in/alan-zagi-3a6637243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                href="https://www.linkedin.com/in/alan-zagi-3a6637243"
                 target="_blank"
+                rel="noopener"
+                aria-label="Alan on LinkedIn"
                 class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="w-full h-5">
@@ -164,13 +160,25 @@
                 </svg>
               </a>
 
-              <a href="mailto:alanzagi@hotmail.com" target="_blank" class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+              <a
+                href="mailto:alanzagi@hotmail.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Email Alan"
+                class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-full h-5">
                   <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
                 </svg>
               </a>
 
-              <a href="https://github.com/alanzagi" target="_blank" class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+              <a
+                href="https://github.com/alanzagi"
+                target="_blank"
+                rel="noopener"
+                aria-label="Alan on GitHub"
+                class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-full h-5">
                   <path
                     d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
@@ -181,6 +189,8 @@
               <a
                 href="https://instagram.com/alanzagi"
                 target="_blank"
+                rel="noopener"
+                aria-label="Alan on Instagram"
                 class="bg-white p-1 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-full h-5">
@@ -189,125 +199,163 @@
                   />
                 </svg>
               </a>
-            </div>
-          </div>
+            </nav>
+          </header>
         </div>
-      </div>
+      </section>
     </main>
     <!-- End Main -->
 
     <!-- Start About -->
-    <section class="bg-gray-50 py-32" id="about">
+    <section class="bg-gray-50 py-32" id="about" aria-labelledby="about-heading">
       <div class="mx-auto px-10 text-center space-y-10 lg:px-96">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">👨‍💻 About Me</h2>
+        <h2 id="about-heading" class="text-4xl font-bold text-gray-900 mb-4">👨‍💻 About Me</h2>
         <p class="text-md text-gray-700 leading-relaxed">
-          Saya bersekolah di SMK Negeri 3 Singkawang studi <a href="https://instagram.com/famousclass_xi_pplg" target="_blank" class="font-bold">Pengembangan Perangkat Lunak & Gim (PPLG)</a> dengan pengalaman 2+ tahun dalam membuat dan
-          mengembangkan <i>website</i>. Hingga sekarang saya telah membuat puluhan <i>websites</i> dengan berbagai tema dan fungsi yang berbeda-beda.
+          Saya bersekolah di <strong>SMK Negeri 3 Singkawang</strong> studi
+          <a href="https://instagram.com/famousclass_xi_pplg" target="_blank" rel="noopener" class="font-bold" aria-label="Instagram kelas XI PPLG"> Pengembangan Perangkat Lunak & Gim (PPLG) </a>
+          dengan pengalaman lebih dari <strong>2 tahun</strong> dalam membuat dan mengembangkan <i lang="en">website</i>. Hingga sekarang saya telah membuat puluhan <i lang="en">websites</i> dengan berbagai tema dan fungsi yang
+          berbeda-beda.
         </p>
       </div>
     </section>
     <!-- End About -->
 
     <!-- Start Projects -->
-    <section class="py-16 bg-gray-50" id="projects">
+    <section class="py-16 bg-gray-50" id="projects" aria-labelledby="projects-heading">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">🚀 Projects</h2>
+        <h2 id="projects-heading" class="text-4xl font-bold text-gray-900 mb-12 text-center">🚀 Projects</h2>
 
         <div class="grid gap-8 px-10 md:grid-cols-2">
-          <div class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
-            <img src="img/lankas.png" alt="Aplikasi Pengelolaan Uang Kas Kelas" class="w-full h-48 object-cover object-left object-top border-2 border-gray-800 rounded-lg" />
+          <!-- Project 1 -->
+          <article class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
+            <img src="img/lankas.png" alt="Screenshot aplikasi LANKAS untuk pengelolaan uang kas kelas" class="w-full h-48 object-cover object-left object-top border-2 border-gray-800 rounded-lg" loading="lazy" decoding="async" />
             <div class="p-4">
               <h3 class="text-xl font-semibold text-gray-900">LANKAS - Aplikasi Pengelolaan Uang Kas</h3>
               <p class="text-gray-600 text-md mt-2">
-                Lankas is a web-based class cash management system developed with Laravel. It allows efficient tracking of payments, expenditures, and financial reports. Features include profile management, CRUD functionality, and PDF
-                generation.
+                Lankas adalah sistem pengelolaan uang kas kelas berbasis web yang dibangun dengan Laravel. Fitur mencakup pencatatan pembayaran, pengeluaran, laporan keuangan, manajemen profil, CRUD data, dan ekspor PDF.
               </p>
-              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" />
-                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" />
-                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" />
+              <a
+                href="https://lankas.pplgxcode.biz.id/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block mt-4 px-4 py-2 bg-gray-100 text-gray-800 rounded-full border border-gray-800 opacity-80 hover: transition"
+                aria-label="Demo aplikasi LANKAS"
+              >
+                Project Preview
+              </a>
+              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3" aria-label="Tools digunakan: Laravel, TailwindCSS, JQuery, MySQL">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" loading="lazy" decoding="async" />
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
-            <img src="img/makmurcatering.jpg" alt="Makmur Catering" class="w-full h-48 object-cover object-left border-2 border-gray-800 rounded-lg" />
+          <!-- Project 2 -->
+          <article class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
+            <img src="img/makmurcatering.jpg" alt="Screenshot website Makmur Catering untuk pemesanan dan profil" class="w-full h-48 object-cover object-left border-2 border-gray-800 rounded-lg" loading="lazy" decoding="async" />
             <div class="p-4">
               <h3 class="text-xl font-semibold text-gray-900">MCatering - Company Profile & Ordering</h3>
               <p class="text-gray-600 text-md mt-2">
-                Makmur Catering is a Laravel-based website designed for catering services, featuring a user-friendly interface for profile management, online ordering, and menu displays. Built with TailwindCSS and Flowbite, it offers an
-                efficient platform for catering businesses.
+                Website Makmur Catering dibangun dengan Laravel, berfungsi sebagai profil bisnis dan sistem pemesanan makanan online. Memiliki antarmuka ramah pengguna, tampilan menu, serta dukungan TailwindCSS dan Flowbite.
               </p>
-              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" />
-                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" />
-                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" />
+              <a
+                href="https://makmurcatering.pplgxcode.biz.id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block mt-4 px-4 py-2 bg-gray-100 text-gray-800 rounded-full border border-gray-800 opacity-80 hover: transition"
+                aria-label="Demo website Makmur Catering"
+              >
+                Project Preview
+              </a>
+              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3" aria-label="Tools digunakan: Laravel, TailwindCSS, JQuery, MySQL">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" loading="lazy" decoding="async" />
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
-            <img src="img/lanbakery.png" alt="Makmur Catering" class="w-full h-48 object-cover object-left border-2 border-gray-800 rounded-lg" />
+          <!-- Project 3 -->
+          <article class="bg-white shadow-md rounded-lg overflow-hidden p-4" data-aos="zoom-in">
+            <img src="img/lanbakery.png" alt="Screenshot website LANBAKERY untuk toko roti" class="w-full h-48 object-cover object-left border-2 border-gray-800 rounded-lg" loading="lazy" decoding="async" />
             <div class="p-4">
               <h3 class="text-xl font-semibold text-gray-900">LANBAKERY - Company Profile & Ordering</h3>
               <p class="text-gray-600 text-md mt-2">
-                LANBAKERY is a complete bakery management website built with Laravel. It features product listings, order processing, and payment integration. Additionally, it includes an admin panel for the owner to manage stock and
-                customize the website's appearance.
+                LANBAKERY adalah situs manajemen toko roti berbasis Laravel dengan fitur listing produk, pemrosesan pesanan, integrasi pembayaran, dan panel admin untuk pengelolaan stok serta kustomisasi tampilan.
               </p>
-              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" />
-                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" />
-                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" />
+              <a
+                href="https://lanbakery.pplgxcode.biz.id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block mt-4 px-4 py-2 bg-gray-100 text-gray-800 rounded-full border border-gray-800 opacity-80 hover: transition"
+                aria-label="Demo website LANBAKERY"
+              >
+                Project Preview
+              </a>
+              <div class="mt-4 text-left text-sm text-gray-500 flex items-center space-x-3" aria-label="Tools digunakan: Laravel, TailwindCSS, JQuery, MySQL">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="img/jquerylogo.png" alt="JQuery" class="w-6 h-6" loading="lazy" decoding="async" />
+                <img src="https://upload.wikimedia.org/wikipedia/id/a/a9/MySQL.png" alt="MySQL" class="w-10 h-6" loading="lazy" decoding="async" />
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
     <!-- End Projects -->
 
     <!-- Start Skills -->
-    <section class="py-10 px-10 bg-gray-50" id="skills">
+    <section class="py-10 px-10 bg-gray-50" id="skills" aria-labelledby="skills-heading">
       <div class="mb-12 text-center">
-        <h2 class="text-4xl font-bold inline-block text-gray-900">🎯 Specialized Skills</h2>
+        <h2 id="skills-heading" class="text-4xl font-bold inline-block text-gray-900">🎯 Specialized Skills</h2>
       </div>
       <div class="grid grid-cols-4 lg:grid-cols-5 gap-6 px-4 sm:px-8 md:px-16 lg:px-56 lg:gap-14" data-aos="fade-up">
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="TailwindCSS" />
-        </div>
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="img/bootstrap.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="Bootstrap" />
-        </div>
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="img/PHP-logo.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="PHP" />
-        </div>
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="Laravel" />
-        </div>
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="https://bayumaulanaikhsan.my.id/images/icon/javascript.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="Javascript" />
-        </div>
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="https://bayumaulanaikhsan.my.id/images/icon/typescript.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="Typescript" />
-        </div>
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="https://bayumaulanaikhsan.my.id/images/icon/mysql.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="MySQL" />
-        </div>
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="ReactJS" />
-        </div>
-        <div class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
-          <img src="img/next-js-logo.png" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" alt="NextJS" />
-        </div>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="TailwindCSS" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">TailwindCSS</figcaption>
+        </figure>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="img/bootstrap.svg" alt="Bootstrap" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">Bootstrap</figcaption>
+        </figure>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="img/PHP-logo.svg" alt="PHP" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">PHP</figcaption>
+        </figure>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">Laravel</figcaption>
+        </figure>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://bayumaulanaikhsan.my.id/images/icon/javascript.svg" alt="Javascript" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">Javascript</figcaption>
+        </figure>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://bayumaulanaikhsan.my.id/images/icon/typescript.svg" alt="Typescript" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">Typescript</figcaption>
+        </figure>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://bayumaulanaikhsan.my.id/images/icon/mysql.svg" alt="MySQL" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">MySQL</figcaption>
+        </figure>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="ReactJS" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">ReactJS</figcaption>
+        </figure>
+        <figure class="flex flex-col items-center justify-center bg-white aspect-square w-full shadow-[6px_6px_0px_0px_#000] font-mono font-bold uppercase rounded-xl transition-all duration-200 hover:shadow-[12px_12px_0px_0px_#000]">
+          <img src="img/next-js-logo.png" alt="NextJS" class="w-12 sm:w-16 lg:w-20 transition-all duration-200" loading="lazy" />
+          <figcaption class="sr-only">NextJS</figcaption>
+        </figure>
       </div>
     </section>
     <!-- End Skills -->
 
     <!-- Start Experience -->
-    <section class="relative px-4 py-10 sm:px-6 lg:px-12 bg-gray-50" id="experience">
+    <section class="relative px-4 py-10 sm:px-6 lg:px-12 bg-gray-50" id="experience" aria-label="Work Experience">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-4xl font-bold mb-12 text-center">🏢 Work Experiences</h2>
 
@@ -317,88 +365,84 @@
 
           <!-- DESKTOP TIMELINE -->
           <div class="hidden lg:block">
-            <!-- Left 1 card -->
-            <div class="mb-12 flex justify-between items-start" data-aos="fade-up">
+            <!-- Left card -->
+            <article class="mb-12 flex justify-between items-start" data-aos="fade-up">
               <div class="w-1/2 pr-8 text-right relative">
                 <span class="absolute -right-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
-                  <img src="img/alanxcode.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                  <img src="img/alanxcode.jpg" alt="Logo ALANxCODE Programming Agency" class="h-full w-full object-contain rounded-full" />
                 </span>
                 <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
                   <h3 class="font-bold text-lg">CEO & Founder</h3>
                   <p class="text-sm text-gray-600 font-semibold">ALANxCODE Programming Agency</p>
                   <p class="text-sm text-gray-700 mt-2">I am the CEO & Founder of ALANxCODE, specializing in web programming. I lead a team delivering custom websites and applications for clients.</p>
-                  <p class="mt-3 text-sm text-gray-500">January 2023 - Present</p>
+                  <time datetime="2023-01">January 2023 - Present</time>
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- Right 2 card -->
-            <div class="mb-12 flex justify-between items-start" data-aos="fade-up" data-aos-delay="100">
+            <!-- Right card -->
+            <article class="mb-12 flex justify-between items-start" data-aos="fade-up" data-aos-delay="100">
               <div class="w-1/2"></div>
               <div class="w-1/2 pl-8 relative">
                 <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
-                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="Logo Cinematography SMK Negeri 3 Singkawang" class="h-full w-full object-contain rounded-full" />
                 </span>
                 <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
                   <h3 class="font-bold text-lg">Producer & Co-Teacher</h3>
                   <p class="text-sm text-gray-600 font-semibold">Cinematography SMK Negeri 3 Singkawang</p>
                   <p class="text-sm text-gray-700 mt-2">
-                    As a Producer & Co-Teacher, I led short film projects, taught cinematography, supervised the extracurricular team, and handled various photo and video documentation tasks for quality visual content.
+                    As a Producer & Co-Teacher, I led short film projects, taught cinematography, supervised the extracurricular team, and handled photo and video documentation for quality visual content.
                   </p>
-                  <p class="mt-3 text-sm text-gray-500">September 2023 - Present</p>
+                  <time datetime="2023-09">September 2023 - Present</time>
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- Left 3 card -->
-            <div class="mb-12 flex justify-between items-start" data-aos="fade-up">
+            <!-- Left card -->
+            <article class="mb-12 flex justify-between items-start" data-aos="fade-up">
               <div class="w-1/2 pr-8 text-right relative">
                 <span class="absolute -right-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
-                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="Logo OSIS SMK Negeri 3 Singkawang" class="h-full w-full object-contain rounded-full" />
                 </span>
                 <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
                   <h3 class="font-bold text-lg">President</h3>
                   <p class="text-sm text-gray-600 font-semibold">OSIS SMK Negeri 3 Singkawang</p>
-                  <p class="text-sm text-gray-700 mt-2">
-                    As OSIS President, I led large events, represented the school externally, organized programs, and delivered public speeches. My leadership positively impacted student engagement and strengthened the school community.
-                  </p>
-                  <p class="mt-3 text-sm text-gray-500">June 2024 - June 2025</p>
+                  <p class="text-sm text-gray-700 mt-2">Led large events, represented the school, organized programs, and delivered public speeches to engage and strengthen the school community.</p>
+                  <time datetime="2024-06">June 2024 - June 2025</time>
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- Right 4 card -->
-            <div class="mb-12 flex justify-between items-start" data-aos="fade-up" data-aos-delay="100">
+            <!-- Right card -->
+            <article class="mb-12 flex justify-between items-start" data-aos="fade-up" data-aos-delay="100">
               <div class="w-1/2"></div>
               <div class="w-1/2 pl-8 relative">
                 <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
-                  <img src="img/komdigi.png" alt="" class="h-full w-full object-contain rounded-full" />
+                  <img src="img/komdigi.png" alt="Logo Diskomdigi Kota Singkawang" class="h-full w-full object-contain rounded-full" />
                 </span>
                 <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
                   <h3 class="font-bold text-lg">Internship Web Developer</h3>
                   <p class="text-sm text-gray-600 font-semibold">Diskomdigi Kota Singkawang</p>
-                  <p class="text-sm text-gray-700 mt-2">As an Internship Web Developer, I worked on websites and Mikrotik networks. My role included design, coding, and ensuring fast, secure connections.</p>
-                  <p class="mt-3 text-sm text-gray-500">June 2025 - January 2026</p>
+                  <p class="text-sm text-gray-700 mt-2">Worked on websites and Mikrotik networks including design, coding, and ensuring fast, secure connections.</p>
+                  <time datetime="2025-06">June 2025 - January 2026</time>
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- Right 5 card -->
-            <div class="mb-12 flex justify-between items-start" data-aos="fade-up">
+            <!-- Left card -->
+            <article class="mb-12 flex justify-between items-start" data-aos="fade-up">
               <div class="w-1/2 pr-8 text-right relative">
                 <span class="absolute -right-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md z-10">
-                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                  <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="Logo MPK SMK Negeri 3 Singkawang" class="h-full w-full object-contain rounded-full" />
                 </span>
                 <div class="bg-white rounded-lg shadow-md p-6 inline-block max-w-xl">
                   <h3 class="font-bold text-lg">Chairman</h3>
                   <p class="text-sm text-gray-600 font-semibold">MPK SMK Negeri 3 Singkawang</p>
-                  <p class="text-sm text-gray-700 mt-2">
-                    As Chairman of MPK, I led student council meetings, represented student interests, organized school activities, and collaborated with administration to ensure a positive and engaging school environment for all students.
-                  </p>
-                  <p class="mt-3 text-sm text-gray-500">June 2025 - June 2026</p>
+                  <p class="text-sm text-gray-700 mt-2">Led student council meetings, represented student interests, organized activities, and collaborated with administration for a positive school environment.</p>
+                  <time datetime="2025-06">June 2025 - June 2026</time>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
 
           <!-- MOBILE VERSION -->
@@ -406,76 +450,68 @@
             <!-- Vertical line mobile -->
             <div class="absolute left-3 top-0 bottom-0 w-1 bg-gray-300"></div>
 
-            <!-- Card 1 -->
-            <div class="mb-12 ml-6 relative" data-aos="fade-up">
+            <!-- Cards (simplified, same content) -->
+            <article class="mb-12 ml-6 relative" data-aos="fade-up">
               <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
-                <img src="img/alanxcode.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                <img src="img/alanxcode.jpg" alt="Logo ALANxCODE Programming Agency" class="h-full w-full object-contain rounded-full" />
               </span>
               <div class="bg-white rounded-lg shadow-md p-6 w-full">
                 <h3 class="font-bold text-lg">CEO & Founder</h3>
                 <p class="text-sm text-gray-600 font-semibold">ALANxCODE Programming Agency</p>
                 <p class="text-sm text-gray-700 mt-2">I am the CEO & Founder of ALANxCODE, specializing in web programming. I lead a team delivering custom websites and applications for clients.</p>
-                <p class="mt-3 text-sm text-gray-500">January 2023 - Present</p>
+                <time datetime="2023-01">January 2023 - Present</time>
               </div>
-            </div>
+            </article>
 
-            <!-- Card 2 -->
-            <div class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
+            <article class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
               <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
-                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="Logo Cinematography SMK Negeri 3 Singkawang" class="h-full w-full object-contain rounded-full" />
               </span>
               <div class="bg-white rounded-lg shadow-md p-6 w-full">
                 <h3 class="font-bold text-lg">Producer & Co-Teacher</h3>
                 <p class="text-sm text-gray-600 font-semibold">Cinematography SMK Negeri 3 Singkawang</p>
                 <p class="text-sm text-gray-700 mt-2">
-                  As a Producer & Co-Teacher, I led short film projects, taught cinematography, supervised the extracurricular team, and handled various photo and video documentation tasks for quality visual content.
+                  As a Producer & Co-Teacher, I led short film projects, taught cinematography, supervised the extracurricular team, and handled photo and video documentation for quality visual content.
                 </p>
-                <p class="mt-3 text-sm text-gray-500">September 2023 - Present</p>
+                <time datetime="2023-09">September 2023 - Present</time>
               </div>
-            </div>
+            </article>
 
-            <!-- Card 3 -->
-            <div class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
+            <article class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
               <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
-                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="Logo OSIS SMK Negeri 3 Singkawang" class="h-full w-full object-contain rounded-full" />
               </span>
               <div class="bg-white rounded-lg shadow-md p-6 w-full">
                 <h3 class="font-bold text-lg">President</h3>
                 <p class="text-sm text-gray-600 font-semibold">OSIS SMK Negeri 3 Singkawang</p>
-                <p class="text-sm text-gray-700 mt-2">
-                  As OSIS President, I led large events, represented the school externally, organized programs, and delivered public speeches. My leadership positively impacted student engagement and strengthened the school community.
-                </p>
-                <p class="mt-3 text-sm text-gray-500">June 2024 - June 2025</p>
+                <p class="text-sm text-gray-700 mt-2">Led large events, represented the school, organized programs, and delivered public speeches to engage and strengthen the school community.</p>
+                <time datetime="2024-06">June 2024 - June 2025</time>
               </div>
-            </div>
+            </article>
 
-            <!-- Card 4 -->
-            <div class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
+            <article class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
               <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
-                <img src="img/komdigi.png" alt="" class="h-full w-full object-contain rounded-full" />
+                <img src="img/komdigi.png" alt="Logo Diskomdigi Kota Singkawang" class="h-full w-full object-contain rounded-full" />
               </span>
               <div class="bg-white rounded-lg shadow-md p-6 w-full">
                 <h3 class="font-bold text-lg">Internship Web Developer</h3>
                 <p class="text-sm text-gray-600 font-semibold">Diskomdigi Kota Singkawang</p>
-                <p class="text-sm text-gray-700 mt-2">As an Internship Web Developer, I worked on websites and Mikrotik networks. My role included design, coding, and ensuring fast, secure connections.</p>
-                <p class="mt-3 text-sm text-gray-500">June 2025 - January 2026</p>
+                <p class="text-sm text-gray-700 mt-2">Worked on websites and Mikrotik networks including design, coding, and ensuring fast, secure connections.</p>
+                <time datetime="2025-06">June 2025 - January 2026</time>
               </div>
-            </div>
+            </article>
 
-            <!-- Card 5 -->
-            <div class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
+            <article class="mb-12 ml-6 relative" data-aos="fade-up" data-aos-delay="100">
               <span class="absolute -left-5 top-1 w-10 h-10 rounded-full bg-white border-2 border-gray-400 flex items-center justify-center shadow-md">
-                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="" class="h-full w-full object-contain rounded-full" />
+                <img src="img/SMK_Negeri_3_Singkawang.jpg" alt="Logo MPK SMK Negeri 3 Singkawang" class="h-full w-full object-contain rounded-full" />
               </span>
               <div class="bg-white rounded-lg shadow-md p-6 w-full">
                 <h3 class="font-bold text-lg">Chairman</h3>
                 <p class="text-sm text-gray-600 font-semibold">MPK SMK Negeri 3 Singkawang</p>
-                <p class="text-sm text-gray-700 mt-2">
-                  As Chairman of MPK, I led student council meetings, represented student interests, organized school activities, and collaborated with administration to ensure a positive and engaging school environment for all students.
-                </p>
-                <p class="mt-3 text-sm text-gray-500">June 2025 - June 2026</p>
+                <p class="text-sm text-gray-700 mt-2">Led student council meetings, represented student interests, organized activities, and collaborated with administration for a positive school environment.</p>
+                <time datetime="2025-06">June 2025 - June 2026</time>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>
@@ -488,33 +524,37 @@
         <h2 class="mb-4 text-4xl tracking-tight font-bold text-center">Get In Touch</h2>
         <p class="mb-8 lg:mb-16 font-light text-center text-gray-900 sm:text-xl">
           Additionally, I'm currently open for freelance or part-time opportunities. If you have an interesting project or need extra hands on deck, don't hesitate to get in touch!
-          <br />
-          <br />Feel free to get in touch with me whenever you need assistance or want to discuss anything. I'm here to help you with pleasure! 🚀
+          <br /><br />
+          Feel free to get in touch with me whenever you need assistance or want to discuss anything. I'm here to help you with pleasure! 🚀
         </p>
-        <form action="#" class="space-y-4" id="contact-form">
+        <form action="#" method="POST" id="contact-form" class="space-y-4" aria-label="Contact form">
           <div>
             <label for="name-input" class="block mb-2 text-sm font-medium">Nama</label>
             <input
               id="name-input"
+              name="name"
               type="text"
               class="shadow-sm bg-white border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-gray-800 focus:border-gray-800 block w-full p-2.5 placeholder-gray-500"
               placeholder="Ketikkan nama lengkapmu disini.."
               required
+              aria-required="true"
             />
           </div>
           <div>
             <label for="message-input" class="block mb-2 text-sm font-medium">Pesan</label>
             <textarea
               id="message-input"
+              name="message"
               rows="6"
               class="block p-2.5 w-full text-sm text-gray-700 bg-white rounded-lg shadow-sm border border-gray-200 focus:ring-gray-800 focus:border-gray-800 placeholder-gray-500"
               placeholder="Ketikkan pesanmu disini.."
               required
+              aria-required="true"
             ></textarea>
           </div>
           <button type="button" onclick="sendToWhatsApp()" class="py-3 px-5 text-sm font-medium text-center text-slate-100 rounded-full bg-gray-800 duration-200 flex items-center space-x-2 border border-gray-800 hover:bg-transparent group">
             <span class="text-white text-md group-hover:text-gray-800">Submit</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 fill-current text-white group-hover:text-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 fill-current text-white group-hover:text-gray-800" aria-hidden="true" focusable="false">
               <path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z" />
             </svg>
           </button>
@@ -524,9 +564,11 @@
     <!-- End Contact -->
 
     <!-- Start Footer -->
-    <footer class="bg-gray-50 pb-20">
+    <footer class="bg-gray-50 pb-20" role="contentinfo">
       <div class="w-full mx-auto max-w-screen-xl p-4 text-center text-xs">
-        <span class="sm:text-center"> © 2025 <a href="https://instagram.com/alanzagi" class="hover:underline text-gray-900 font-bold"> Alan </a>. All Rights Reserved. </span>
+        <p class="sm:text-center text-gray-700">
+          © <time datetime="2025">2025</time> <a href="https://instagram.com/alanzagi" class="hover:underline text-gray-900 font-bold" target="_blank" rel="noopener noreferrer"> Alan </a>. All Rights Reserved.
+        </p>
       </div>
     </footer>
     <!-- End Footer -->
